@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧠 Redlytics
+
+Redlytics is an AI-powered Reddit trend analyzer that helps makers, startups, and indie founders discover what products communities care about — and what to build next.
+
+It scrapes hot posts and top comments from any subreddit, processes the data with OpenAI, and returns a product insight based on real user discussion and sentiment.
+
+---
+
+## Tech Stack
+
+**Frontend:** Next.js, React, TailwindCSS, Pixel RetroUI  
+**Backend:** FastAPI, Python, PRAW (Reddit API), OpenAI GPT-3.5  
+**Dev Tools:** VS Code, Vercel (frontend), Railway/Render (backend)
+
+---
 
 ## Getting Started
 
-First, run the development server:
+## Frontend Setup
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# or: yarn dev / pnpm dev / bun dev
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Backend Setup (Python + FastAPI)
+1.	Create and activate a virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. Install backend dependencies
+"pip install -r requirements.txt" 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Create a .env file in the root directory and add:
+REDDIT_CLIENT_ID=your_client_id
+REDDIT_CLIENT_SECRET=your_client_secret
+REDDIT_USER_AGENT=your_user_agent
+OPENAI_API_KEY=your_openai_key
 
-## Learn More
+4. Start backend server
+uvicorn api:app --reload
 
-To learn more about Next.js, take a look at the following resources:
+Features
+	•	Analyze trending posts + comments from any subreddit
+	• Generate AI-powered product creation recommendations
+	•	Identify common product traits, brands, and ideas
+	•	 Real-time frontend with animated UI and progress feedback
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
