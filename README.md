@@ -42,7 +42,7 @@ uvicorn api:app --reload
 
 Features
 	•	Analyze trending posts + comments from any subreddit
-	• Generate AI-powered product creation recommendations
+	•       Generate AI-powered product creation recommendations
 	•	Identify common product traits, brands, and ideas
 	•	 Real-time frontend with animated UI and progress feedback
 
